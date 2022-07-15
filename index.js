@@ -7,7 +7,7 @@ const app = express();
 
 //Servidor de sockets
 const server = require('http').createServer(app);
-
+const PORT = process.env.PORT;
 //configuracion del socket server
 const io = require('socket.io')(server);
 
@@ -31,4 +31,4 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(8080, () => console.log('Server corriendo en puerto:8080'));
+server.listen(PORT, () => console.log('Server corriendo en puerto:8080'));
