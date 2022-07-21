@@ -34,12 +34,12 @@ io.on('connection', (socket) => {
     users.push(user);
     io.emit('users-from-server', users);
   });
-  socket.on('disconnect', () => {
+  /* socket.on('disconnect', () => {
     io.emit('mensajes', {
       servidor: 'Servidor',
       mensaje: `${nombre} ha abandonado la sala`,
     });
-  });
+  }); */
 });
 
 server.listen(PORT, () => console.log(`Server corriendo en puerto ${PORT}`));
