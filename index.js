@@ -16,11 +16,11 @@ app.use(express.static(__dirname + '/public'));
 const messages = [];
 const users = [];
 io.on('connection', (socket) => {
-  /* socket.on('connect-user', (name) => {
+  socket.on('connect-user', (name) => {
     socket.broadcast.emit('message-connect', {
       message: `${name} ha entrado en la sala del chat`,
     });
-  }); */
+  });
   socket.emit('message-current', messages);
   socket.on('message-to-server', (data) => {
     messages.push(data);
