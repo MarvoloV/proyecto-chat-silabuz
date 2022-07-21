@@ -1,5 +1,5 @@
 const { uuid } = require('uuidv4');
-require('dotenv').config();
+// require('dotenv').config();
 //Servidor de express
 const express = require('express');
 
